@@ -1,5 +1,4 @@
 [build]
-  base = "my protofile/my-protofile-main"
   command = "npm run build"
   publish = "dist"
 
