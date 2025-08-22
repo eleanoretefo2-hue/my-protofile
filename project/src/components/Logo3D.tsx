@@ -6,19 +6,7 @@ interface Logo3DProps {
 
 const Logo3D: React.FC<Logo3DProps> = ({ className = '' }) => {
 	return (
-		<div className={`relative select-none ${className}`} aria-label="MA logo 3D">
-			{/* Neon halo */}
-			<div className="ring-neon-glow" aria-hidden="true" />
-
-			{/* Neon ring stack */}
-			<div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-				<div className="relative">
-					<div className="w-28 h-28 md:w-36 md:h-36 rounded-full ring-neon" />
-					<div className="absolute inset-0 rounded-full ring-neon-dots" />
-					<div className="absolute inset-0 rounded-full ring-neon-runner" />
-				</div>
-			</div>
-
+		<div className={`relative select-none ${className}`} aria-label="MA logo">
 			{/* Main 3D-ish text with inner glow flow */}
 			<div className="relative flex items-center justify-center">
 				<span className="text-5xl md:text-7xl font-extrabold tracking-tight text-glow-flow text-emboss-blue tilt-sway">
