@@ -181,8 +181,8 @@
 
 @keyframes sweep {
   0% { transform: translateX(-150%); opacity: 0; }
-  30% { opacity: 1; }
-  70% { opacity: 1; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
   100% { transform: translateX(150%); opacity: 0; }
 }
 
@@ -197,6 +197,21 @@
 @keyframes breathe {
   0%, 100% { opacity: 0.35; filter: blur(18px); }
   50% { opacity: 0.75; filter: blur(26px); }
+}
+
+/* تسريع حركة breathe للأزرار */
+.animate-breathe {
+  animation-duration: 1.5s;
+}
+
+/* تسريع حركة sweep للأزرار */
+.animate-sweep {
+  animation-duration: 1.2s;
+}
+
+/* تسريع حركة btn-flow للأزرار */
+.btn-inner-flow {
+  animation-duration: 2s;
 }
 
 @keyframes neon-flicker {
