@@ -55,7 +55,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
       {/* Main Loading Content */}
       <div className="relative text-center space-y-8">
         {/* Circular progress ring around MA */}
-        <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto">
+        <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full">
           <svg className="absolute inset-0 w-full h-full rotate-[-90deg]" viewBox="0 0 100 100" aria-hidden="true">
             <circle cx="50" cy="50" r="44" stroke="rgba(255,255,255,0.1)" strokeWidth="4" fill="none" />
             <circle
@@ -73,15 +73,19 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
               </linearGradient>
             </defs>
           </svg>
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center neon-3d-glow">
             <Logo3D />
           </div>
+          {/* layered decorative rings */}
+          <div className="ring-runner" aria-hidden="true" />
+          <div className="absolute inset-[-6px] rounded-full ring-sheen animate-spin-very-slow" aria-hidden="true" />
+          <div className="absolute inset-3 rounded-full border-2 border-dashed border-blue-400/30 animate-spin-reverse" aria-hidden="true" />
           {/* extra rotating ring */}
           <div className="absolute inset-0 rotate-slower rounded-full border-t-2 border-green-400/30" aria-hidden="true" />
         </div>
 
         {/* Loading Text */}
-        <div className="space-y-2">
+        <div className="space-y-2 mt-8 md:mt-12">
           <div className="text-2xl md:text-3xl font-semibold tracking-wide min-h-[2.25rem] md:min-h-[2.75rem]">
             <span className="bg-gradient-to-r from-green-400 via-blue-500 to-pink-500 bg-clip-text text-transparent">
               {name.slice(0, nameIndex)}
