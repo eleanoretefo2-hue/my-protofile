@@ -28,6 +28,9 @@ const NeonButton: React.FC<NeonButtonProps> = ({
       onClick={onClick}
       className={`${baseClasses} ${variantClasses[variant]} ${className}`}
     >
+      {/* Inner animated flow layer (color-matched) */}
+      <span className={`btn-inner-flow ${variant === 'primary' ? 'btn-inner-green' : 'btn-inner-pink'}`} aria-hidden="true" />
+
       {/* Inner moving sweep highlight */}
       <div className="absolute inset-0 rounded-full overflow-hidden">
         <div className={`h-full w-1/3 translate-x-[-150%] animate-sweep opacity-60 ${variant === 'primary' ? 'bg-gradient-to-r from-green-400/40 via-green-300/30 to-transparent' : 'bg-gradient-to-r from-pink-400/40 via-pink-300/30 to-transparent'}`} />

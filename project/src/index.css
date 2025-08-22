@@ -79,42 +79,30 @@
     filter: blur(2px);
   }
 
-  /* Neon button effects */
-  .btn-neon-border {
-    position: absolute;
-    inset: -2px;
-    border-radius: 9999px;
-    background: conic-gradient(from 0deg, rgba(147,197,253,0.9), rgba(59,130,246,0.9), rgba(147,197,253,0.9));
-    filter: blur(6px);
-    opacity: 0.75;
-    animation: spin 4.5s linear infinite;
-    pointer-events: none;
-  }
-  .btn-neon-border-inner {
-    position: absolute;
-    inset: 0;
-    border-radius: 9999px;
-    border: 2px solid rgba(147,197,253,0.6);
-    box-shadow: 0 0 14px rgba(147,197,253,0.6), inset 0 0 10px rgba(59,130,246,0.35);
-    pointer-events: none;
-  }
-  .btn-geo-pattern {
+  /* Inner flow for buttons */
+  .btn-inner-flow {
     position: absolute;
     inset: 2px;
     border-radius: 9999px;
-    background:
-      radial-gradient(circle at 25% 30%, rgba(255,255,255,0.08) 0 20%, transparent 22%),
-      radial-gradient(circle at 75% 70%, rgba(255,255,255,0.08) 0 18%, transparent 20%),
-      linear-gradient(135deg, rgba(147,197,253,0.08), rgba(59,130,246,0.08));
     overflow: hidden;
-  }
-  .btn-moving-glow {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(120px 60px at var(--bx, -20%) 50%, rgba(255,255,255,0.35), rgba(147,197,253,0.2) 40%, rgba(0,0,0,0) 60%);
-    mix-blend-mode: screen;
-    animation: btn-glow-pan 2.8s ease-in-out infinite;
     pointer-events: none;
+    mix-blend-mode: screen;
+    background-size: 240% 240%, 100% 100%;
+    background-position: var(--bx, 0%) 0, center;
+    animation: btn-flow-pos 3s ease-in-out infinite;
+    opacity: 0.9;
+  }
+  .btn-inner-green {
+    background-image:
+      linear-gradient(135deg, rgba(34,197,94,0.25) 0%, rgba(34,197,94,0.12) 35%, rgba(34,197,94,0.05) 70%),
+      radial-gradient(60% 80% at 30% 30%, rgba(34,197,94,0.18), rgba(34,197,94,0.06));
+    box-shadow: inset 0 0 18px rgba(34,197,94,0.22);
+  }
+  .btn-inner-pink {
+    background-image:
+      linear-gradient(135deg, rgba(244,114,182,0.25) 0%, rgba(244,114,182,0.12) 35%, rgba(244,114,182,0.05) 70%),
+      radial-gradient(60% 80% at 30% 30%, rgba(244,114,182,0.18), rgba(244,114,182,0.06));
+    box-shadow: inset 0 0 18px rgba(244,114,182,0.22);
   }
 }
 
@@ -127,10 +115,10 @@
   }
 }
 
-@keyframes btn-glow-pan {
-  0%   { --bx: -20%; }
+@keyframes btn-flow-pos {
+  0%   { --bx: -40%; }
   50%  { --bx: 120%; }
-  100% { --bx: -20%; }
+  100% { --bx: -40%; }
 }
 
 @keyframes text-glow-pan {
