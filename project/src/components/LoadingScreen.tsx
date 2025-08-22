@@ -76,6 +76,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           <div className="absolute inset-0 flex items-center justify-center neon-3d-glow">
             <Logo3D />
           </div>
+          {/* enhanced colorful conic ring and meteor */}
+          <div className="ring-conic-glow" aria-hidden="true" />
+          <div className="ring-conic" aria-hidden="true" style={{ animationDuration: '1.8s' }} />
+          <div className="meteor" aria-hidden="true"><div className="meteor-dot" /></div>
           {/* layered decorative rings */}
           <div className="ring-runner" aria-hidden="true" />
           <div className="absolute inset-[-6px] rounded-full ring-sheen animate-spin-very-slow" aria-hidden="true" />

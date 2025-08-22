@@ -146,6 +146,68 @@
     filter: blur(6px);
     animation: spin-snake 2s linear infinite;
   }
+
+  /* Faster spin helper */
+  .animate-spin-fast {
+    animation: spin 1.8s linear infinite;
+  }
+
+  /* Conic gradient spectrum ring */
+  .ring-conic {
+    position: absolute;
+    inset: -8px;
+    border-radius: 9999px;
+    background: conic-gradient(
+      from 0deg,
+      rgba(16,185,129,0.0) 0deg,
+      rgba(16,185,129,0.9) 20deg,
+      rgba(59,130,246,0.95) 140deg,
+      rgba(236,72,153,0.9) 260deg,
+      rgba(236,72,153,0.0) 360deg
+    );
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 7px), #000 0);
+            mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 0);
+    filter: drop-shadow(0 0 12px rgba(16,185,129,0.45)) drop-shadow(0 0 18px rgba(59,130,246,0.35));
+    animation: spin 2.8s linear infinite;
+  }
+
+  /* Soft glow outer ring */
+  .ring-conic-glow {
+    position: absolute;
+    inset: -14px;
+    border-radius: 9999px;
+    background: conic-gradient(
+      from 0deg,
+      rgba(16,185,129,0.2),
+      rgba(59,130,246,0.18),
+      rgba(236,72,153,0.16),
+      rgba(16,185,129,0.2)
+    );
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 18px), #000 0);
+            mask: radial-gradient(farthest-side, transparent calc(100% - 18px), #000 0);
+    filter: blur(10px);
+    opacity: 0.8;
+    animation: spin 8s linear infinite;
+  }
+
+  /* Rotating meteor dot */
+  .meteor {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    animation: spin 1.6s linear infinite;
+  }
+  .meteor-dot {
+    position: absolute;
+    left: 50%;
+    top: -6px;
+    width: 12px;
+    height: 12px;
+    transform: translateX(-50%);
+    border-radius: 9999px;
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #22c55e 40%, #2563eb 80%);
+    box-shadow: 0 0 10px rgba(34,197,94,0.9), 0 0 16px rgba(37,99,235,0.6), 0 0 24px rgba(236,72,153,0.4);
+  }
 }
 
 @keyframes gradient-x {
