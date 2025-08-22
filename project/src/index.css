@@ -69,318 +69,66 @@
       0 6px 18px rgba(30,64,175,0.25);
     animation: text-glow-pan 3.2s ease-in-out infinite;
   }
-  .text-neon-soft {
-    background-image: linear-gradient(to right, #d1d5db, #f3f4f6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 8px rgba(59, 130, 246, 0.25), 0 0 12px rgba(16, 185, 129, 0.2);
-  }
-  .typing-caret {
-    display: inline-block;
-    margin-left: 2px;
-    width: 8px;
-    height: 1.15em;
-    vertical-align: -0.2em;
-    background: linear-gradient(to bottom, #3b82f6, #1e40af);
-    border-radius: 2px;
-    box-shadow: 0 0 8px rgba(59,130,246,0.7), 0 0 10px rgba(37,99,235,0.5);
-    animation: caret-blink 1s steps(1, end) infinite;
-  }
 
-  /* Button animated glows */
-  .animate-sweep {
-    animation: sweep 4s linear infinite;
-  }
-  .animate-breathe {
-    animation: breathe 3s ease-in-out infinite;
-  }
-  .rotate-slow {
-    animation: spin 6s linear infinite;
-  }
-  .neon-flicker {
-    animation: neon-flicker 1.8s ease-in-out infinite alternate;
-  }
-  .grid-overlay {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 40px 40px, 40px 40px;
-    animation: grid-move 10s linear infinite;
-  }
-  .rotate-slower {
-    animation: spin 12s linear infinite;
-  }
-  .tilt-sway {
-    animation: tilt-sway 6s ease-in-out infinite;
-    display: inline-block;
-  }
-  .text-extrude-ma {
-    text-shadow:
-      0.5px 0.5px 0 #0c1a1a,
-      1px 1px 0 #0c1a1a,
-      1.5px 1.5px 0 #0c1a1a,
-      2px 2px 0 #0c1a1a,
-      3px 3px 0 #0c1a1a,
-      4px 4px 0 #0c1a1a,
-      0 6px 18px rgba(20, 184, 166, 0.35),
-      0 10px 28px rgba(59, 130, 246, 0.25),
-      0 14px 40px rgba(236, 72, 153, 0.2);
-  }
-  /* Blue-only extruded text */
-  .text-extrude-blue {
-    text-shadow:
-      0.5px 0.5px 0 #0b1530,
-      1px 1px 0 #0b1530,
-      1.5px 1.5px 0 #0b1530,
-      2px 2px 0 #0b1530,
-      3px 3px 0 #0b1530,
-      4px 4px 0 #0b1530,
-      0 8px 22px rgba(37,99,235,0.35),
-      0 14px 40px rgba(37,99,235,0.28),
-      0 18px 56px rgba(30,64,175,0.25);
-  }
-  /* Emboss variant */
-  .text-emboss-blue {
-    text-shadow:
-      -1px -1px 0 rgba(255,255,255,0.25),
-      1px 1px 0 rgba(0,0,0,0.25),
-      0 10px 28px rgba(37,99,235,0.25);
-  }
-  .neon-3d-glow {
-    filter: drop-shadow(0 0 10px rgba(16,185,129,0.75)) drop-shadow(0 0 16px rgba(59,130,246,0.6));
-  }
-  /* Blue neon glow */
-  .neon-3d-blue {
-    filter: drop-shadow(0 0 12px rgba(59,130,246,0.8)) drop-shadow(0 0 18px rgba(29,78,216,0.6));
-  }
-  .ring-sheen {
-    border: 2px solid transparent;
-    border-image: conic-gradient(
-      from 0deg,
-      rgba(16,185,129,0.0) 0deg,
-      rgba(16,185,129,0.6) 30deg,
-      rgba(59,130,246,0.6) 120deg,
-      rgba(236,72,153,0.6) 210deg,
-      rgba(236,72,153,0.0) 360deg
-    ) 1;
-    box-shadow: 0 0 30px rgba(16,185,129,0.15), inset 0 0 20px rgba(59,130,246,0.1);
-  }
-  /* Blue ring sheen */
-  .ring-sheen-blue {
-    border: 2px solid transparent;
-    border-image: conic-gradient(
-      from 0deg,
-      rgba(37,99,235,0.0) 0deg,
-      rgba(96,165,250,0.65) 40deg,
-      rgba(59,130,246,0.7) 140deg,
-      rgba(30,64,175,0.6) 240deg,
-      rgba(37,99,235,0.0) 360deg
-    ) 1;
-    box-shadow: 0 0 30px rgba(59,130,246,0.18), inset 0 0 20px rgba(37,99,235,0.12);
-  }
-  .mask-fade-b {
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-  }
-  .animate-breathe-fast {
-    animation: breathe 1.5s ease-in-out infinite;
-  }
-  .animate-breathe-fast {
-    animation: breathe 1.5s ease-in-out infinite;
-  }
-
-  .animate-float-soft {
-    animation: float-soft 6s ease-in-out infinite;
-  }
-  .animate-float-fast {
-    animation: float-soft 3s ease-in-out infinite;
-  }
-  .animate-float-faster {
-    animation: float-soft 1.8s ease-in-out infinite;
-  }
-  .animate-float-faster {
-    animation: float-soft 1.8s ease-in-out infinite;
-  }
-  .ring-runner {
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    border: 3px solid transparent;
-    /* Snake-like moving highlight around the frame */
-    border-image: conic-gradient(
-      from 0deg,
-      rgba(16,185,129,0.95) 0deg 18deg,
-      rgba(59,130,246,0.55) 18deg 48deg,
-      rgba(236,72,153,0.3) 48deg 90deg,
-      rgba(0,0,0,0) 90deg 360deg
-    ) 1;
-    filter: blur(6px);
-    animation: spin-snake 2s linear infinite;
-  }
-  /* Blue runner */
-  .ring-runner-blue {
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    border: 3px solid transparent;
-    border-image: conic-gradient(
-      from 0deg,
-      rgba(147,197,253,0.95) 0deg 28deg,
-      rgba(59,130,246,0.4) 28deg 90deg,
-      rgba(0,0,0,0) 90deg 360deg
-    ) 1;
-    filter: blur(6px);
-    animation: spin-snake 2s linear infinite;
-  }
-
-  /* Faster spin helper */
-  .animate-spin-fast {
-    animation: spin 1.8s linear infinite;
-  }
-
-  /* Blue-only conic gradient ring */
-  .ring-blue {
-    position: absolute;
-    inset: -8px;
-    border-radius: 9999px;
-    background: conic-gradient(
-      from 0deg,
-      rgba(59,130,246,0.0) 0deg,
-      rgba(147,197,253,0.95) 30deg,
-      rgba(59,130,246,0.98) 180deg,
-      rgba(30,64,175,0.9) 300deg,
-      rgba(59,130,246,0.0) 360deg
-    );
-    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 7px), #000 0);
-            mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 0);
-    filter: drop-shadow(0 0 12px rgba(59,130,246,0.45)) drop-shadow(0 0 18px rgba(29,78,216,0.35));
-    animation: spin 2.4s linear infinite;
-  }
-
-  /* Soft blue glow outer ring */
-  .ring-blue-glow {
-    position: absolute;
-    inset: -14px;
-    border-radius: 9999px;
-    background: conic-gradient(
-      from 0deg,
-      rgba(147,197,253,0.22),
-      rgba(59,130,246,0.18),
-      rgba(29,78,216,0.16),
-      rgba(147,197,253,0.22)
-    );
-    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 18px), #000 0);
-            mask: radial-gradient(farthest-side, transparent calc(100% - 18px), #000 0);
-    filter: blur(12px);
-    opacity: 0.85;
-    animation: spin 8s linear infinite;
-  }
-
-  /* Dotted rotating ring */
-  .ring-blue-dots {
+  /* Neon ring styles */
+  .ring-neon {
     position: absolute;
     inset: -10px;
     border-radius: 9999px;
-    background:
-      conic-gradient(
-        from 0deg,
-        rgba(147,197,253,0.95) 0 10deg,
-        transparent 10deg 36deg,
-        rgba(147,197,253,0.85) 36deg 46deg,
-        transparent 46deg 72deg,
-        rgba(147,197,253,0.75) 72deg 82deg,
-        transparent 82deg 108deg,
-        rgba(147,197,253,0.65) 108deg 118deg,
-        transparent 118deg 144deg,
-        rgba(147,197,253,0.6) 144deg 154deg,
-        transparent 154deg 180deg,
-        rgba(147,197,253,0.55) 180deg 190deg,
-        transparent 190deg 216deg,
-        rgba(147,197,253,0.5) 216deg 226deg,
-        transparent 226deg 252deg,
-        rgba(147,197,253,0.45) 252deg 262deg,
-        transparent 262deg 288deg,
-        rgba(147,197,253,0.4) 288deg 298deg,
-        transparent 298deg 324deg,
-        rgba(147,197,253,0.35) 324deg 334deg,
-        transparent 334deg 360deg
-      );
-    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 7px), #000 0);
-            mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 0);
-    filter: drop-shadow(0 0 10px rgba(59,130,246,0.4));
-    animation: spin 3.2s linear infinite;
+    background: conic-gradient(
+      from 0deg,
+      rgba(125,211,252,1) 0deg,
+      rgba(59,130,246,1) 120deg,
+      rgba(37,99,235,1) 240deg,
+      rgba(125,211,252,1) 360deg
+    );
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+            mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0);
+    filter: drop-shadow(0 0 14px rgba(96,165,250,0.85)) drop-shadow(0 0 22px rgba(59,130,246,0.6));
+    animation: spin 2.1s linear infinite;
   }
-
-  /* Tick marks ring (denser, thin) */
-  .ring-ticks-blue {
+  .ring-neon-glow {
     position: absolute;
-    inset: -6px;
+    inset: -18px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 50% 50%, rgba(96,165,250,0.45), rgba(59,130,246,0.0) 60%);
+    filter: blur(14px);
+    opacity: 0.95;
+    pointer-events: none;
+    animation: breathe 3.6s ease-in-out infinite;
+  }
+  .ring-neon-runner {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 3px solid transparent;
+    border-image: conic-gradient(
+      from 0deg,
+      rgba(191,219,254,1) 0 18deg,
+      rgba(59,130,246,0.0) 18deg 360deg
+    ) 1;
+    filter: blur(8px);
+    animation: spin 1.6s linear infinite;
+  }
+  .ring-neon-dots {
+    position: absolute;
+    inset: -10px;
     border-radius: 9999px;
     background: repeating-conic-gradient(
       from 0deg,
-      rgba(147,197,253,0.8) 0deg 2deg,
-      transparent 2deg 8deg
+      rgba(191,219,254,0.9) 0deg 6deg,
+      rgba(0,0,0,0) 6deg 16deg
     );
-    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
-            mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 0);
-    opacity: 0.65;
-    animation: spin 9s linear infinite;
-  }
-
-  /* Glass circle overlay */
-  .glass-circle-blue {
-    position: absolute;
-    inset: 12px;
-    border-radius: 9999px;
-    background:
-      radial-gradient(60% 80% at 30% 20%, rgba(255,255,255,0.18), rgba(255,255,255,0.02) 60%),
-      linear-gradient(135deg, rgba(59,130,246,0.12), rgba(29,78,216,0.08));
-    border: 1px solid rgba(147,197,253,0.25);
-    box-shadow: inset 0 0 18px rgba(59,130,246,0.2), 0 0 24px rgba(37,99,235,0.12);
-    -webkit-backdrop-filter: blur(4px);
-            backdrop-filter: blur(4px);
-  }
-
-  /* Aura pulse behind logo */
-  .aura-pulse-blue {
-    position: absolute;
-    inset: -24px;
-    border-radius: 9999px;
-    background: radial-gradient(circle at 50% 50%, rgba(59,130,246,0.35), rgba(59,130,246,0.0) 60%);
-    filter: blur(22px);
-    animation: breathe 3.2s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  /* Inner shadow ring */
-  .inner-shadow-blue {
-    position: absolute;
-    inset: 6px;
-    border-radius: 9999px;
-    box-shadow: inset 0 0 22px rgba(30,64,175,0.6), inset 0 0 12px rgba(147,197,253,0.25);
-    pointer-events: none;
-  }
-
-  /* Shine arc */
-  .shine-arc-blue {
-    position: absolute;
-    inset: -8px;
-    border-radius: 9999px;
-    background: conic-gradient(from 0deg, rgba(255,255,255,0.25) 0 12deg, rgba(255,255,255,0.0) 12deg 360deg);
     -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
             mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0);
-    animation: spin 5s linear infinite;
-    filter: blur(1px);
+    opacity: 0.55;
+    filter: drop-shadow(0 0 10px rgba(191,219,254,0.6));
+    animation: spin 3s linear infinite;
   }
 
-  /* Blue notches (use with positioned children) */
-  .notch-blue {
-    background: linear-gradient(to right, rgba(147,197,253,0.9), rgba(59,130,246,0.8));
-    box-shadow: 0 0 8px rgba(59,130,246,0.5);
-    height: 3px;
-    width: 18px;
-    border-radius: 9999px;
+  /* Neon filter for SVG rings */
+  .svg-neon {
+    filter: drop-shadow(0 0 10px rgba(125,211,252,0.75)) drop-shadow(0 0 18px rgba(59,130,246,0.55));
   }
 }
 
