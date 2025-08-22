@@ -94,8 +94,8 @@ const ThreeBackground: React.FC = () => {
 		// Hide the grid in favour of planets
 		gridGroup.visible = false;
 
-		// Center for planet orbits (no sun mesh)
-		const center = new THREE.Vector3(0, 0.8, -9);
+		// Center for planet orbits (lowered to give more space above)
+		const center = new THREE.Vector3(0, -0.4, -9);
 
 		// Scene lighting (no sun): hemisphere + rim light for pseudo drop-shadows
 		const hemiLight = new THREE.HemisphereLight(0x224466, 0x050810, 0.75);

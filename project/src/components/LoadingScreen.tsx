@@ -51,7 +51,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
       <ThreeBackground />
 
       <div className="relative text-center space-y-8">
-        <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full pop-in -mt-6 md:-mt-10 lg:-mt-16">
+        <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full pop-in -mt-10 md:-mt-20 lg:-mt-28 xl:-mt-32">
           <div className="blue-bloom" aria-hidden="true" />
           <svg className="absolute inset-0 w-full h-full rotate-[-90deg]" viewBox="0 0 100 100" aria-hidden="true">
             <circle cx="50" cy="50" r="44" stroke="rgba(255,255,255,0.08)" strokeWidth="4" fill="none" />
