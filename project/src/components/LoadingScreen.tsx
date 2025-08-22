@@ -88,12 +88,12 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           <span className="typing-caret">|</span>
         </div>
         <div className="mt-3 space-y-2 flex flex-col items-center">
-          <div className="w-64 h-2 bg-gray-800 rounded-full mx-auto overflow-hidden relative">
+          <div className="w-64 progress-track-neon mx-auto">
             <div 
-              className="h-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 rounded-full transition-all duration-300 ease-out shadow-lg shadow-blue-400/50"
+              className="progress-fill-neon"
               style={{ width: `${progress}%` }}
             />
-            <div className="absolute inset-y-0 left-0 w-16 bg-white/10 blur-md rounded-full pointer-events-none animate-sweep" />
+            <div className="progress-sheen" />
           </div>
           <div className="flex justify-center space-x-2">
             {[...Array(3)].map((_, i) => (

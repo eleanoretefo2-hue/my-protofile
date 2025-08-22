@@ -53,7 +53,31 @@
     animation: caret-blink 1s steps(1, end) infinite;
   }
 
-  /* Animated inner glow sweep for text */
+  /* Neon thin progress bar */
+  .progress-track-neon {
+    height: 6px;
+    border-radius: 9999px;
+    background: rgba(15,23,42,0.75);
+    box-shadow: inset 0 0 10px rgba(30,64,175,0.35);
+    position: relative;
+    overflow: hidden;
+  }
+  .progress-fill-neon {
+    height: 100%;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #93c5fd, #3b82f6 40%, #1d4ed8 80%);
+    box-shadow: 0 0 16px rgba(147,197,253,0.8), 0 0 24px rgba(59,130,246,0.6);
+    position: relative;
+  }
+  .progress-sheen {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0.0) 100%);
+    mix-blend-mode: screen;
+    animation: sweep 2.4s linear infinite;
+    pointer-events: none;
+    filter: blur(2px);
+  }
   .text-glow-flow {
     position: relative;
     display: inline-block;
