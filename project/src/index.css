@@ -78,81 +78,43 @@
     pointer-events: none;
     filter: blur(2px);
   }
-  .text-glow-flow {
-    position: relative;
-    display: inline-block;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-image:
-      radial-gradient(120px 60px at var(--tx, -20%) 40%, rgba(255,255,255,0.9), rgba(147,197,253,0.65) 35%, rgba(59,130,246,0.0) 60%),
-      linear-gradient(135deg, #bfdbfe, #60a5fa 30%, #93c5fd 60%, #e0f2fe);
-    text-shadow:
-      0 0 12px rgba(59,130,246,0.35),
-      0 0 20px rgba(59,130,246,0.25),
-      0 6px 18px rgba(30,64,175,0.25);
-    animation: text-glow-pan 3.2s ease-in-out infinite;
-  }
 
-  /* Neon ring styles */
-  .ring-neon {
+  /* Neon button effects */
+  .btn-neon-border {
     position: absolute;
-    inset: -10px;
+    inset: -2px;
     border-radius: 9999px;
-    background: conic-gradient(
-      from 0deg,
-      rgba(125,211,252,1) 0deg,
-      rgba(59,130,246,1) 120deg,
-      rgba(37,99,235,1) 240deg,
-      rgba(125,211,252,1) 360deg
-    );
-    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
-            mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0);
-    filter: drop-shadow(0 0 14px rgba(96,165,250,0.85)) drop-shadow(0 0 22px rgba(59,130,246,0.6));
-    animation: spin 2.1s linear infinite;
-  }
-  .ring-neon-glow {
-    position: absolute;
-    inset: -18px;
-    border-radius: 9999px;
-    background: radial-gradient(circle at 50% 50%, rgba(96,165,250,0.45), rgba(59,130,246,0.0) 60%);
-    filter: blur(14px);
-    opacity: 0.95;
+    background: conic-gradient(from 0deg, rgba(147,197,253,0.9), rgba(59,130,246,0.9), rgba(147,197,253,0.9));
+    filter: blur(6px);
+    opacity: 0.75;
+    animation: spin 4.5s linear infinite;
     pointer-events: none;
-    animation: breathe 3.6s ease-in-out infinite;
   }
-  .ring-neon-runner {
+  .btn-neon-border-inner {
     position: absolute;
     inset: 0;
-    border-radius: inherit;
-    border: 3px solid transparent;
-    border-image: conic-gradient(
-      from 0deg,
-      rgba(191,219,254,1) 0 18deg,
-      rgba(59,130,246,0.0) 18deg 360deg
-    ) 1;
-    filter: blur(8px);
-    animation: spin 1.6s linear infinite;
-  }
-  .ring-neon-dots {
-    position: absolute;
-    inset: -10px;
     border-radius: 9999px;
-    background: repeating-conic-gradient(
-      from 0deg,
-      rgba(191,219,254,0.9) 0deg 6deg,
-      rgba(0,0,0,0) 6deg 16deg
-    );
-    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
-            mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0);
-    opacity: 0.55;
-    filter: drop-shadow(0 0 10px rgba(191,219,254,0.6));
-    animation: spin 3s linear infinite;
+    border: 2px solid rgba(147,197,253,0.6);
+    box-shadow: 0 0 14px rgba(147,197,253,0.6), inset 0 0 10px rgba(59,130,246,0.35);
+    pointer-events: none;
   }
-
-  /* Neon filter for SVG rings */
-  .svg-neon {
-    filter: drop-shadow(0 0 10px rgba(125,211,252,0.75)) drop-shadow(0 0 18px rgba(59,130,246,0.55));
+  .btn-geo-pattern {
+    position: absolute;
+    inset: 2px;
+    border-radius: 9999px;
+    background:
+      radial-gradient(circle at 25% 30%, rgba(255,255,255,0.08) 0 20%, transparent 22%),
+      radial-gradient(circle at 75% 70%, rgba(255,255,255,0.08) 0 18%, transparent 20%),
+      linear-gradient(135deg, rgba(147,197,253,0.08), rgba(59,130,246,0.08));
+    overflow: hidden;
+  }
+  .btn-moving-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120px 60px at var(--bx, -20%) 50%, rgba(255,255,255,0.35), rgba(147,197,253,0.2) 40%, rgba(0,0,0,0) 60%);
+    mix-blend-mode: screen;
+    animation: btn-glow-pan 2.8s ease-in-out infinite;
+    pointer-events: none;
   }
 }
 
@@ -163,6 +125,12 @@
   50% {
     background-position: 100% 50%;
   }
+}
+
+@keyframes btn-glow-pan {
+  0%   { --bx: -20%; }
+  50%  { --bx: 120%; }
+  100% { --bx: -20%; }
 }
 
 @keyframes text-glow-pan {
