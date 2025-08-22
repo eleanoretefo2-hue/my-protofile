@@ -17,7 +17,7 @@ const Logo3D: React.FC<Logo3DProps> = ({ className = '' }) => {
 
 			{/* Main 3D extruded text */}
 			<div className="relative flex items-center justify-center">
-				<span className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-br from-blue-300 via-blue-400 to-blue-200 bg-clip-text text-transparent text-extrude-blue neon-3d-blue tilt-sway">
+				<span className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-br from-blue-300 via-blue-400 to-blue-200 bg-clip-text text-transparent text-extrude-blue neon-3d-blue neon-flicker tilt-sway">
 					MA
 				</span>
 

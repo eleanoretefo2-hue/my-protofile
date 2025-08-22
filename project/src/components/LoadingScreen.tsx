@@ -51,7 +51,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
       <ThreeBackground />
 
       <div className="relative text-center space-y-8">
-        <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full">
+        <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full pop-in">
+          <div className="blue-bloom" aria-hidden="true" />
           <svg className="absolute inset-0 w-full h-full rotate-[-90deg]" viewBox="0 0 100 100" aria-hidden="true">
             <circle cx="50" cy="50" r="44" stroke="rgba(255,255,255,0.08)" strokeWidth="4" fill="none" />
             <circle
@@ -75,6 +76,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           {/* blue-only enhanced rings */}
           <div className="ring-blue-glow" aria-hidden="true" />
           <div className="ring-blue" aria-hidden="true" />
+          <div className="ring-blue-dots" aria-hidden="true" />
           <div className="meteor" aria-hidden="true"><div className="meteor-dot" /></div>
           <div className="ring-runner-blue" aria-hidden="true" />
           <div className="absolute inset-[-6px] rounded-full ring-sheen-blue animate-spin-very-slow" aria-hidden="true" />
@@ -84,11 +86,12 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
 
         {/* Centered Progress Only */}
         <div className="space-y-2 mt-6">
-          <div className="w-64 h-2 bg-gray-800 rounded-full mx-auto overflow-hidden">
+          <div className="w-64 h-2 bg-gray-800 rounded-full mx-auto overflow-hidden relative">
             <div 
               className="h-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 rounded-full transition-all duration-300 ease-out shadow-lg shadow-blue-400/50"
               style={{ width: `${progress}%` }}
             />
+            <div className="absolute inset-y-0 left-0 w-16 bg-white/10 blur-md rounded-full pointer-events-none animate-sweep" />
           </div>
           <p className="text-lg text-blue-300 font-mono">{progress}%</p>
         </div>
