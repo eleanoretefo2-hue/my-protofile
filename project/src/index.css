@@ -181,8 +181,8 @@
 
 @keyframes sweep {
   0% { transform: translateX(-150%); opacity: 0; }
-  30% { opacity: 1; }
-  70% { opacity: 1; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
   100% { transform: translateX(150%); opacity: 0; }
 }
 
@@ -197,6 +197,205 @@
 @keyframes breathe {
   0%, 100% { opacity: 0.35; filter: blur(18px); }
   50% { opacity: 0.75; filter: blur(26px); }
+}
+
+/* تسريع حركة breathe للأزرار */
+.animate-breathe {
+  animation-duration: 1.5s;
+}
+
+/* تسريع حركة sweep للأزرار */
+.animate-sweep {
+  animation-duration: 1.2s;
+}
+
+/* تسريع حركة btn-flow للأزرار */
+.btn-inner-flow {
+  animation-duration: 2s;
+}
+
+/* حركات جديدة سريعة للأزرار */
+@keyframes ripple-fast {
+  0% { transform: translateX(-100%) scale(0.8); opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { transform: translateX(100%) scale(1.2); opacity: 0; }
+}
+
+@keyframes pulse-fast {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.1); opacity: 0.4; }
+}
+
+@keyframes spin-fast {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow-fast {
+  0%, 100% { opacity: 0.4; filter: blur(20px); }
+  50% { opacity: 0.8; filter: blur(30px); }
+}
+
+.animate-ripple-fast {
+  animation: ripple-fast 0.8s ease-in-out infinite;
+}
+
+.animate-pulse-fast {
+  animation: pulse-fast 0.6s ease-in-out infinite;
+}
+
+.animate-spin-fast {
+  animation: spin-fast 1s linear infinite;
+}
+
+.animate-glow-fast {
+  animation: glow-fast 0.8s ease-in-out infinite;
+}
+
+@keyframes bounce-fast {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-bounce-fast {
+  animation: bounce-fast 0.5s ease-in-out infinite;
+}
+
+@keyframes sparkle-fast {
+  0%, 100% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.5); opacity: 1; }
+}
+
+.animate-sparkle-fast {
+  animation: sparkle-fast 0.8s ease-in-out infinite;
+}
+
+/* حركات ثلاثية الأبعاد جديدة للأزرار */
+@keyframes float-3d {
+  0%, 100% { 
+    transform: translateZ(0px) rotateX(0deg) rotateY(0deg); 
+    filter: brightness(1);
+  }
+  25% { 
+    transform: translateZ(20px) rotateX(5deg) rotateY(-5deg); 
+    filter: brightness(1.2);
+  }
+  50% { 
+    transform: translateZ(40px) rotateX(0deg) rotateY(0deg); 
+    filter: brightness(1.4);
+  }
+  75% { 
+    transform: translateZ(20px) rotateX(-5deg) rotateY(5deg); 
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes cube-3d {
+  0% { 
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0px); 
+  }
+  100% { 
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg) translateZ(50px); 
+  }
+}
+
+@keyframes tilt-3d {
+  0% { 
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px); 
+  }
+  100% { 
+    transform: perspective(1000px) rotateX(15deg) rotateY(-15deg) translateZ(30px); 
+  }
+}
+
+@keyframes particle-3d {
+  0%, 100% { 
+    transform: translateZ(0px) scale(1); 
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateZ(30px) scale(1.5); 
+    opacity: 1;
+  }
+}
+
+@keyframes glow-3d {
+  0%, 100% { 
+    opacity: 0.3; 
+    filter: blur(25px);
+    transform: scale(1) translateZ(0px);
+  }
+  50% { 
+    opacity: 0.7; 
+    filter: blur(35px);
+    transform: scale(1.1) translateZ(20px);
+  }
+}
+
+@keyframes shadow-3d {
+  0% { 
+    transform: translateZ(0px) scale(1);
+    opacity: 0.2;
+  }
+  100% { 
+    transform: translateZ(-20px) scale(1.2);
+    opacity: 0.4;
+  }
+}
+
+.animate-float-3d {
+  animation: float-3d 3s ease-in-out infinite;
+}
+
+.animate-cube-3d {
+  animation: cube-3d 4s linear infinite;
+}
+
+.animate-tilt-3d {
+  animation: tilt-3d 0.5s ease-out forwards;
+}
+
+.animate-particle-3d {
+  animation: particle-3d 2s ease-in-out infinite;
+}
+
+.animate-glow-3d {
+  animation: glow-3d 2.5s ease-in-out infinite;
+}
+
+.animate-shadow-3d {
+  animation: shadow-3d 0.5s ease-out forwards;
+}
+
+@keyframes depth-3d {
+  0% { 
+    transform: scale(1) translateZ(0px);
+    opacity: 0.3;
+  }
+  100% { 
+    transform: scale(1.05) translateZ(15px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes corner-3d {
+  0%, 100% { 
+    transform: translateZ(0px) scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateZ(25px) scale(1.3);
+    opacity: 1;
+  }
+}
+
+.animate-depth-3d {
+  animation: depth-3d 0.6s ease-out forwards;
+}
+
+.animate-corner-3d {
+  animation: corner-3d 1.5s ease-in-out infinite;
 }
 
 @keyframes neon-flicker {
