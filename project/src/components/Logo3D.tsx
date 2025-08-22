@@ -126,7 +126,7 @@ const Logo3D: React.FC<Logo3DProps> = ({ className = '' }) => {
 	}, []);
 
 	return (
-		<div ref={containerRef} className={`relative ${className}`} aria-label="MA 3D logo" />
+		<div ref={containerRef} className={`relative w-full h-full ${className}`} aria-label="MA 3D logo" />
 	);
 };
 
