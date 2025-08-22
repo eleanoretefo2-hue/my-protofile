@@ -105,6 +105,13 @@
       0 14px 40px rgba(37,99,235,0.28),
       0 18px 56px rgba(30,64,175,0.25);
   }
+  /* Emboss variant */
+  .text-emboss-blue {
+    text-shadow:
+      -1px -1px 0 rgba(255,255,255,0.25),
+      1px 1px 0 rgba(0,0,0,0.25),
+      0 10px 28px rgba(37,99,235,0.25);
+  }
   .neon-3d-glow {
     filter: drop-shadow(0 0 10px rgba(16,185,129,0.75)) drop-shadow(0 0 16px rgba(59,130,246,0.6));
   }
@@ -235,42 +242,6 @@
     animation: spin 8s linear infinite;
   }
 
-  /* Rotating meteor dot (blue) */
-  .meteor {
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    animation: spin 1.6s linear infinite;
-  }
-  .meteor-dot {
-    position: absolute;
-    left: 50%;
-    top: -6px;
-    width: 12px;
-    height: 12px;
-    transform: translateX(-50%);
-    border-radius: 9999px;
-    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #93c5fd 45%, #2563eb 90%);
-    box-shadow: 0 0 10px rgba(147,197,253,0.9), 0 0 16px rgba(37,99,235,0.7), 0 0 24px rgba(30,64,175,0.5);
-  }
-
-  /* Pop-in intro for spinner */
-  .pop-in {
-    animation: pop-in 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  /* Big blue bloom glow behind spinner */
-  .blue-bloom {
-    position: absolute;
-    inset: -28px;
-    border-radius: 9999px;
-    background: radial-gradient(circle at 50% 50%, rgba(59,130,246,0.35) 0%, rgba(59,130,246,0.1) 35%, rgba(59,130,246,0.0) 65%);
-    filter: blur(28px);
-    opacity: 0.9;
-    pointer-events: none;
-    animation: breathe 3.5s ease-in-out infinite;
-  }
-
   /* Dotted rotating ring */
   .ring-blue-dots {
     position: absolute;
@@ -304,6 +275,77 @@
             mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 0);
     filter: drop-shadow(0 0 10px rgba(59,130,246,0.4));
     animation: spin 3.2s linear infinite;
+  }
+
+  /* Tick marks ring (denser, thin) */
+  .ring-ticks-blue {
+    position: absolute;
+    inset: -6px;
+    border-radius: 9999px;
+    background: repeating-conic-gradient(
+      from 0deg,
+      rgba(147,197,253,0.8) 0deg 2deg,
+      transparent 2deg 8deg
+    );
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 5px), #000 0);
+            mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 0);
+    opacity: 0.65;
+    animation: spin 9s linear infinite;
+  }
+
+  /* Glass circle overlay */
+  .glass-circle-blue {
+    position: absolute;
+    inset: 12px;
+    border-radius: 9999px;
+    background:
+      radial-gradient(60% 80% at 30% 20%, rgba(255,255,255,0.18), rgba(255,255,255,0.02) 60%),
+      linear-gradient(135deg, rgba(59,130,246,0.12), rgba(29,78,216,0.08));
+    border: 1px solid rgba(147,197,253,0.25);
+    box-shadow: inset 0 0 18px rgba(59,130,246,0.2), 0 0 24px rgba(37,99,235,0.12);
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+  }
+
+  /* Aura pulse behind logo */
+  .aura-pulse-blue {
+    position: absolute;
+    inset: -24px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 50% 50%, rgba(59,130,246,0.35), rgba(59,130,246,0.0) 60%);
+    filter: blur(22px);
+    animation: breathe 3.2s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Inner shadow ring */
+  .inner-shadow-blue {
+    position: absolute;
+    inset: 6px;
+    border-radius: 9999px;
+    box-shadow: inset 0 0 22px rgba(30,64,175,0.6), inset 0 0 12px rgba(147,197,253,0.25);
+    pointer-events: none;
+  }
+
+  /* Shine arc */
+  .shine-arc-blue {
+    position: absolute;
+    inset: -8px;
+    border-radius: 9999px;
+    background: conic-gradient(from 0deg, rgba(255,255,255,0.25) 0 12deg, rgba(255,255,255,0.0) 12deg 360deg);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+            mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0);
+    animation: spin 5s linear infinite;
+    filter: blur(1px);
+  }
+
+  /* Blue notches (use with positioned children) */
+  .notch-blue {
+    background: linear-gradient(to right, rgba(147,197,253,0.9), rgba(59,130,246,0.8));
+    box-shadow: 0 0 8px rgba(59,130,246,0.5);
+    height: 3px;
+    width: 18px;
+    border-radius: 9999px;
   }
 }
 
