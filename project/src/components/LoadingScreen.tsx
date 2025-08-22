@@ -54,21 +54,37 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
         <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full pop-in -mt-10 md:-mt-20 lg:-mt-28 xl:-mt-32">
           <div className="blue-bloom" aria-hidden="true" />
           <svg className="absolute inset-0 w-full h-full rotate-[-90deg]" viewBox="0 0 100 100" aria-hidden="true">
-            {/* Removed static background circle */}
-            <circle
-              cx="50" cy="50" r="44" fill="none" strokeWidth="5"
-              strokeLinejoin="round" strokeLinecap="round"
-              stroke="url(#gradBlue)"
-              strokeDasharray={`${2 * Math.PI * 44}`}
-              strokeDashoffset={`${(1 - progress / 100) * 2 * Math.PI * 44}`}
-            />
             <defs>
               <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#93c5fd" />
                 <stop offset="50%" stopColor="#3b82f6" />
                 <stop offset="100%" stopColor="#1e3a8a" />
               </linearGradient>
+              <filter id="neonGlowBlue" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="3.2" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
             </defs>
+            {/* Glow stroke behind (thicker, blurred) */}
+            <circle
+              cx="50" cy="50" r="44" fill="none" strokeWidth="10"
+              strokeLinejoin="round" strokeLinecap="round"
+              stroke="url(#gradBlue)" opacity="0.45"
+              strokeDasharray={`${2 * Math.PI * 44}`}
+              strokeDashoffset={`${(1 - progress / 100) * 2 * Math.PI * 44}`}
+              filter="url(#neonGlowBlue)"
+            />
+            {/* Crisp main stroke (thinner) */}
+            <circle
+              cx="50" cy="50" r="44" fill="none" strokeWidth="4"
+              strokeLinejoin="round" strokeLinecap="round"
+              stroke="url(#gradBlue)"
+              strokeDasharray={`${2 * Math.PI * 44}`}
+              strokeDashoffset={`${(1 - progress / 100) * 2 * Math.PI * 44}`}
+            />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center neon-3d-blue">
             <Logo3D />
