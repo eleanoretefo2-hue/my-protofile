@@ -53,6 +53,23 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
       <div className="relative text-center space-y-8">
         <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full pop-in -mt-10 md:-mt-20 lg:-mt-28 xl:-mt-32">
           <div className="blue-bloom" aria-hidden="true" />
+          <svg className="absolute inset-0 w-full h-full rotate-[-90deg]" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="44" stroke="rgba(255,255,255,0.08)" strokeWidth="4" fill="none" />
+            <circle
+              cx="50" cy="50" r="44" fill="none" strokeWidth="5"
+              strokeLinejoin="round" strokeLinecap="round"
+              stroke="url(#gradBlue)"
+              strokeDasharray={`${2 * Math.PI * 44}`}
+              strokeDashoffset={`${(1 - progress / 100) * 2 * Math.PI * 44}`}
+            />
+            <defs>
+              <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#93c5fd" />
+                <stop offset="50%" stopColor="#3b82f6" />
+                <stop offset="100%" stopColor="#1e3a8a" />
+              </linearGradient>
+            </defs>
+          </svg>
           <div className="absolute inset-0 flex items-center justify-center neon-3d-blue">
             <Logo3D />
           </div>
