@@ -82,23 +82,14 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           <div className="absolute inset-0 rotate-slower rounded-full border-t-2 border-blue-400/30" aria-hidden="true" />
         </div>
 
-        {/* Loading Text */}
-        <div className="space-y-2 mt-12 md:mt-16 lg:mt-20">
-          <div className="text-2xl md:text-3xl font-semibold tracking-wide min-h-[2.25rem] md:min-h-[2.75rem]">
-            <span className="bg-gradient-to-r from-blue-300 via-blue-400 to-blue-200 bg-clip-text text-transparent">
-              {name.slice(0, nameIndex)}
-            </span>
-            <span className="typing-caret">|</span>
-          </div>
-          
-          {/* Progress Bar */}
+        {/* Centered Progress Only */}
+        <div className="space-y-2 mt-6">
           <div className="w-64 h-2 bg-gray-800 rounded-full mx-auto overflow-hidden">
             <div 
               className="h-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 rounded-full transition-all duration-300 ease-out shadow-lg shadow-blue-400/50"
               style={{ width: `${progress}%` }}
             />
           </div>
-          
           <p className="text-lg text-blue-300 font-mono">{progress}%</p>
         </div>
 
@@ -110,6 +101,16 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
               style={{ animationDelay: `${i * 0.2}s` }}
             />
           ))}
+        </div>
+      </div>
+
+      {/* Bottom-fixed typed name */}
+      <div className="absolute inset-x-0 bottom-6 md:bottom-8 lg:bottom-10 z-20">
+        <div className="text-center">
+          <span className="text-2xl md:text-3xl font-semibold tracking-wide bg-gradient-to-r from-blue-300 via-blue-400 to-blue-200 bg-clip-text text-transparent">
+            {name.slice(0, nameIndex)}
+          </span>
+          <span className="typing-caret">|</span>
         </div>
       </div>
     </div>
