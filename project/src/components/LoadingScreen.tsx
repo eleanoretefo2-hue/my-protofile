@@ -51,7 +51,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
       <ThreeBackground />
 
       <div className="relative text-center space-y-8">
-        <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full pop-in">
+        <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full pop-in -mt-6 md:-mt-10 lg:-mt-16">
           <div className="blue-bloom" aria-hidden="true" />
           <svg className="absolute inset-0 w-full h-full rotate-[-90deg]" viewBox="0 0 100 100" aria-hidden="true">
             <circle cx="50" cy="50" r="44" stroke="rgba(255,255,255,0.08)" strokeWidth="4" fill="none" />
@@ -84,8 +84,19 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           <div className="absolute inset-0 rotate-slower rounded-full border-t-2 border-blue-400/30" aria-hidden="true" />
         </div>
 
-        {/* Centered Progress Only */}
-        <div className="space-y-2 mt-6">
+        {/* Centered Progress Only (now hidden; moved to bottom bar) */}
+        <div className="hidden" />
+      </div>
+
+      {/* Bottom-fixed typed name with progress and dots */}
+      <div className="absolute inset-x-0 bottom-6 md:bottom-8 lg:bottom-10 z-20">
+        <div className="text-center">
+          <span className="text-2xl md:text-3xl font-semibold tracking-wide bg-gradient-to-r from-blue-300 via-blue-400 to-blue-200 bg-clip-text text-transparent">
+            {name.slice(0, nameIndex)}
+          </span>
+          <span className="typing-caret">|</span>
+        </div>
+        <div className="mt-3 space-y-2 flex flex-col items-center">
           <div className="w-64 h-2 bg-gray-800 rounded-full mx-auto overflow-hidden relative">
             <div 
               className="h-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 rounded-full transition-all duration-300 ease-out shadow-lg shadow-blue-400/50"
@@ -93,27 +104,15 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
             />
             <div className="absolute inset-y-0 left-0 w-16 bg-white/10 blur-md rounded-full pointer-events-none animate-sweep" />
           </div>
-          <p className="text-lg text-blue-300 font-mono">{progress}%</p>
-        </div>
-
-        <div className="flex justify-center space-x-2">
-          {[...Array(3)].map((_, i) => (
-            <div
-              key={i}
-              className="w-3 h-3 bg-gradient-to-r from-blue-300 to-blue-500 rounded-full animate-bounce"
-              style={{ animationDelay: `${i * 0.2}s` }}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Bottom-fixed typed name */}
-      <div className="absolute inset-x-0 bottom-6 md:bottom-8 lg:bottom-10 z-20">
-        <div className="text-center">
-          <span className="text-2xl md:text-3xl font-semibold tracking-wide bg-gradient-to-r from-blue-300 via-blue-400 to-blue-200 bg-clip-text text-transparent">
-            {name.slice(0, nameIndex)}
-          </span>
-          <span className="typing-caret">|</span>
+          <div className="flex justify-center space-x-2">
+            {[...Array(3)].map((_, i) => (
+              <div
+                key={i}
+                className="w-3 h-3 bg-gradient-to-r from-blue-300 to-blue-500 rounded-full animate-bounce"
+                style={{ animationDelay: `${i * 0.2}s` }}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
